@@ -11,7 +11,7 @@
 
 # Select the network interface to sniff the data. On Linux, you can use the
 # "any" keyword to sniff on all connected interfaces.
-packetbeat.interfaces.device: any
+packetbeat.interfaces.device: en0
 
 #================================== Flows =====================================
 
@@ -27,6 +27,9 @@ packetbeat.flows:
 #========================== Transaction protocols =============================
 
 packetbeat.protocols:
+- type: sflow
+  ports: [9999]
+
 - type: icmp
   # Enable ICMPv4 and ICMPv6 monitoring. Default: false
   enabled: true
@@ -43,7 +46,7 @@ packetbeat.protocols:
 - type: dns
   # Configure the ports where to listen for DNS traffic. You can disable
   # the DNS protocol by commenting out the list of ports.
-  ports: [53]
+  ports: [53,9999]
 
   # include_authorities controls whether or not the dns.authorities field
   # (authority resource records) is added to messages.
@@ -160,7 +163,7 @@ setup.kibana:
 #-------------------------- Elasticsearch output ------------------------------
 output.elasticsearch:
   # Array of hosts to connect to.
-  hosts: ["localhost:9200"]
+  hosts: ["10.6.200.8:9200"]
 
   # Optional protocol and basic auth credentials.
   #protocol: "https"
