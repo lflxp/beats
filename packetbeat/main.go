@@ -4,6 +4,7 @@ import (
 	"os"
 
 	"github.com/elastic/beats/packetbeat/cmd"
+	_ "github.com/elastic/beats/packetbeat/protos/sflow"
 )
 
 var Name = "packetbeat"
