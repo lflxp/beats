@@ -26,6 +26,9 @@ packetbeat.flows:
 
 #========================== Transaction protocols =============================
 
+packetbeat.protocols.sss:
+  ports: [9999]
+
 packetbeat.protocols.icmp:
   # Enable ICMPv4 and ICMPv6 monitoring. Default: false
   enabled: true

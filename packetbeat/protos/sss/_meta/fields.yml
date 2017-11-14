@@ -1,0 +1,252 @@
+- key: sss
+  title: "SSS"
+  description: SSS-specific event fields.
+  fields:
+    - name: sss
+      type: group
+      description: Information about the HTTP request and response.
+      fields:
+        - name: Data
+          description: HTTP request
+          type: group
+          fields:
+            - name: @timestamp
+              type: date
+              description: >
+                for test date
+            - name: Datagram.IPLength
+              description: >
+                Data.Datagram.IPLength
+            - name: Datagram.SrcIP
+              description: >
+                Data.Datagram.SrcIP
+            - name: Datagram.DstIP
+              description: >
+                Data.Datagram.DstIP
+            - name: Datagram.SrcPort
+              description: >
+                Data.Datagram.SrcPort
+            - name: Datagram.DstPort
+              description: >
+                Data.Datagram.DstPort
+            - name: DatagramVersion
+              description: >
+                DatagramVersion
+            - name: AgentAddress
+              description: >
+                AgentAddress
+            - name: SubAgentID
+              description: >
+                SubAgentID
+            - name: SequenceNumber
+              description: >
+                SequenceNumber
+            - name: AgentUptime
+              description: >
+                AgentUptime
+            - name: SampleCount
+              description: >
+                SampleCount
+            - name: EnterpriseID
+              description: >
+                EnterpriseID
+            - name: Format
+              description: >
+                Format
+            - name: SampleLength
+              description: >
+                SampleLength
+            - name: SequenceNumber
+              description: >
+                SequenceNumber
+            - name: SourceIDClass
+              description: >
+                SourceIDClass
+            - name: SourceIDIndex
+              description: >
+                SourceIDIndex
+            - name: SamplingRate
+              description: >
+                SamplingRate
+            - name: SamplePool
+              description: >
+                SamplePool
+            - name: Dropped
+              description: >
+                Dropped
+            - name: InputInterfaceFormat
+              description: >
+                InputInterfaceFormat
+            - name: InputInterface
+              description: >
+                InputInterface
+            - name: OutputInterfaceFormat
+              description: >
+                OutputInterfaceFormat
+            - name: OutputInterface
+              description: >
+                OutputInterface
+            - name: RecordCount
+              type: long
+              description: >
+                RecordCount
+            - name: SFlowRawPacketFlowRecord.SFlowBaseFlowRecord.EnterpriseID
+              description: >
+                SFlowRawPacketFlowRecord.SFlowBaseFlowRecord.EnterpriseID
+            - name: SFlowRawPacketFlowRecord.SFlowBaseFlowRecord.Format
+              description: >
+                SFlowRawPacketFlowRecord.SFlowBaseFlowRecord.Format
+            - name: SFlowRawPacketFlowRecord.SFlowBaseFlowRecord.FlowDataLength
+              description: >
+                SFlowRawPacketFlowRecord.SFlowBaseFlowRecord.FlowDataLength
+            - name: SFlowRawPacketFlowRecord.HeaderProtocol
+              description: >
+                SFlowRawPacketFlowRecord.HeaderProtocol
+            - name: SFlowRawPacketFlowRecord.FrameLength
+              description: >
+                SFlowRawPacketFlowRecord.FrameLength
+            - name: SFlowRawPacketFlowRecord.PayloadRemoved
+              description: >
+                SFlowRawPacketFlowRecord.PayloadRemoved
+            - name: SFlowRawPacketFlowRecord.HeaderLength
+              description: >
+                SFlowRawPacketFlowRecord.HeaderLength
+            - name: SFlowRawPacketFlowRecord.Header.FlowRecords
+              description: >
+                SFlowRawPacketFlowRecord.Header.FlowRecords
+            - name: SFlowRawPacketFlowRecord.Header.Packets
+              description: >
+                SFlowRawPacketFlowRecord.Header.Packets
+            - name: SFlowRawPacketFlowRecord.Header.Bytes
+              description: >
+                SFlowRawPacketFlowRecord.Header.Bytes
+            - name: SFlowRawPacketFlowRecord.Header.RateBytes
+              type: long
+              description: >
+                SFlowRawPacketFlowRecord.Header.RateBytes
+            - name: SFlowRawPacketFlowRecord.Header.SrcMac
+              description: >
+                SFlowRawPacketFlowRecord.Header.SrcMac
+            - name: SFlowRawPacketFlowRecord.Header.DstMac
+              description: >
+                SFlowRawPacketFlowRecord.Header.DstMac
+            - name: SFlowRawPacketFlowRecord.Header.SrcIP
+              description: >
+                SFlowRawPacketFlowRecord.Header.SrcIP
+            - name: SFlowRawPacketFlowRecord.Header.DstIP
+              description: >
+                SFlowRawPacketFlowRecord.Header.DstIP
+            - name: SFlowRawPacketFlowRecord.Header.Ipv4_version
+              description: >
+                SFlowRawPacketFlowRecord.Header.Ipv4_version
+            - name: SFlowRawPacketFlowRecord.Header.Ipv4_ihl
+              description: >
+                SFlowRawPacketFlowRecord.Header.Ipv4_ihl
+            - name: SFlowRawPacketFlowRecord.Header.Ipv4_tos
+              description: >
+                SFlowRawPacketFlowRecord.Header.Ipv4_tos
+            - name: SFlowRawPacketFlowRecord.Header.Ipv4_ttl
+              description: >
+                SFlowRawPacketFlowRecord.Header.Ipv4_ttl
+            - name: SFlowRawPacketFlowRecord.Header.Ipv4_protocol
+              description: >
+                SFlowRawPacketFlowRecord.Header.Ipv4_protocol
+            - name: SFlowRawPacketFlowRecord.Header.SrcPort
+              description: >
+                SFlowRawPacketFlowRecord.Header.SrcPort
+            - name: SFlowRawPacketFlowRecord.Header.DstPort
+              description: >
+                SFlowRawPacketFlowRecord.Header.DstPort
+            - name: SFlowExtendedSwitchFlowRecord.SFlowBaseFlowRecord.EnterpriseID
+              description: >
+                SFlowExtendedSwitchFlowRecord.SFlowBaseFlowRecord.EnterpriseID
+            - name: SFlowExtendedSwitchFlowRecord.SFlowBaseFlowRecord.Format
+              description: >
+                SFlowExtendedSwitchFlowRecord.SFlowBaseFlowRecord.Format
+            - name: SFlowExtendedSwitchFlowRecord.SFlowBaseFlowRecord.FlowDataLength
+              description: >
+                AAAAAAAAAAAAAAAA
+            - name: SFlowExtendedSwitchFlowRecord.IncomingVLAN
+              description: >
+                SFlowExtendedSwitchFlowRecord.IncomingVLAN
+            - name: SFlowExtendedSwitchFlowRecord.IncomingVLANPriority
+              description: >
+                SFlowExtendedSwitchFlowRecord.IncomingVLANPriority
+            - name: SFlowExtendedSwitchFlowRecord.OutgoingVLAN
+              description: >
+                SFlowExtendedSwitchFlowRecord.OutgoingVLAN
+            - name: SFlowExtendedSwitchFlowRecord.OutgoingVLANPriority
+              description: >
+                SFlowExtendedSwitchFlowRecord.OutgoingVLANPriority
+            - name: SFlowExtendedRouterFlowRecord.SFlowBaseFlowRecord.EnterpriseID
+              description: >
+                SFlowExtendedRouterFlowRecord.SFlowBaseFlowRecord.EnterpriseID
+            - name: SFlowExtendedRouterFlowRecord.SFlowBaseFlowRecord.Format
+              description: >
+                SFlowExtendedRouterFlowRecord.SFlowBaseFlowRecord.Format
+            - name: SFlowExtendedRouterFlowRecord.SFlowBaseFlowRecord.FlowDataLength
+              description: >
+                SFlowExtendedRouterFlowRecord.SFlowBaseFlowRecord.FlowDataLength
+            - name: SFlowExtendedRouterFlowRecord.NextHop
+              description: >
+                SFlowExtendedRouterFlowRecord.NextHop
+            - name: SFlowExtendedRouterFlowRecord.NextHopSourceMask
+              description: >
+                SFlowExtendedRouterFlowRecord.NextHopSourceMask
+            - name: SFlowExtendedRouterFlowRecord.NextHopDestinationMask
+              description: >
+                SFlowExtendedRouterFlowRecord.NextHopDestinationMask
+            - name: SFlowExtendedGatewayFlowRecord.SFlowBaseFlowRecord.EnterpriseID
+              description: >
+                SFlowExtendedGatewayFlowRecord.SFlowBaseFlowRecord.EnterpriseID
+            - name: SFlowExtendedGatewayFlowRecord.SFlowBaseFlowRecord.Format
+              description: >
+                SFlowExtendedGatewayFlowRecord.SFlowBaseFlowRecord.Format
+            - name: SFlowExtendedGatewayFlowRecord.SFlowBaseFlowRecord.FlowDataLength
+              description: >
+                SFlowExtendedGatewayFlowRecord.SFlowBaseFlowRecord.FlowDataLength
+            - name: SFlowExtendedGatewayFlowRecord.NextHop
+              description: >
+                SFlowExtendedGatewayFlowRecord.NextHop
+            - name: SFlowExtendedGatewayFlowRecord.AS
+              description: >
+                SFlowExtendedGatewayFlowRecord.AS
+            - name: SFlowExtendedGatewayFlowRecord.SourceAS
+              description: >
+                SFlowExtendedGatewayFlowRecord.SourceAS
+            - name: SFlowExtendedGatewayFlowRecord.PeerAS
+              description: >
+                SFlowExtendedGatewayFlowRecord.PeerAS
+            - name: SFlowExtendedGatewayFlowRecord.ASPathCount
+              description: >
+                SFlowExtendedGatewayFlowRecord.ASPathCount
+            - name: SFlowExtendedGatewayFlowRecord.ASPath
+              description: >
+                SFlowExtendedGatewayFlowRecord.ASPath
+            - name: SFlowExtendedGatewayFlowRecord.Communities
+              description: >
+                SFlowExtendedGatewayFlowRecord.Communities
+            - name: SFlowExtendedGatewayFlowRecord.LocalPref
+              description: >
+                SFlowExtendedGatewayFlowRecord.LocalPref
+            - name: SFlowExtendedUserFlow.SFlowBaseFlowRecord.EnterpriseID
+              description: >
+                SFlowExtendedUserFlow.SFlowBaseFlowRecord.EnterpriseID
+            - name: SFlowExtendedUserFlow.SFlowBaseFlowRecord.Format
+              description: >
+                SFlowExtendedUserFlow.SFlowBaseFlowRecord.Format
+            - name: SFlowExtendedUserFlow.SFlowBaseFlowRecord.FlowDataLength
+              description: >
+                SFlowExtendedUserFlow.SFlowBaseFlowRecord.FlowDataLength
+            - name: SFlowExtendedUserFlow.SourceCharSet
+              description: >
+                SFlowExtendedUserFlow.SourceCharSet
+            - name: SFlowExtendedUserFlow.SourceUserID
+              description: >
+                SFlowExtendedUserFlow.SourceUserID
+            - name: SFlowExtendedUserFlow.DestinationCharSet
+              description: >
+                SFlowExtendedUserFlow.DestinationCharSet
+            - name: SFlowExtendedUserFlow.DestinationUserID
+              description: >
+                SFlowExtendedUserFlow.DestinationUserID

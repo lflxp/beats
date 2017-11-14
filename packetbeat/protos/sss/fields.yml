@@ -1849,9 +1849,6 @@ fields:
             - name: SampleLength
               description: >
                 SampleLength
-            - name: SequenceNumber
-              description: >
-                SequenceNumber
             - name: SourceIDClass
               description: >
                 SourceIDClass
