@@ -489,96 +489,78 @@ func (dns *dnsPlugin) publishTransaction(t *dnsTransaction) {
 
 			//sflow agent info
 			fields["Data.Datagram.IPLength"] = counter.Data.Datagram.IPLength
-			fields["Data.Datagram.SrcIP"] = sa.Data.Datagram.SrcIP
-			fields["Data.Datagram.DstIP"] = sa.Data.Datagram.DstIP
-			fields["Data.Datagram.SrcPort"] = sa.Data.Datagram.SrcPort
-			fields["Data.Datagram.DstPort"] = sa.Data.Datagram.DstPort
+			fields["Data.Datagram.SrcIP"] = counter.Data.Datagram.SrcIP
+			fields["Data.Datagram.DstIP"] = counter.Data.Datagram.DstIP
+			fields["Data.Datagram.SrcPort"] = counter.Data.Datagram.SrcPort
+			fields["Data.Datagram.DstPort"] = counter.Data.Datagram.DstPort
 
 			//SFlow info
-			fields["type"] = sa.Data.Type
-			fields["DatagramVersion"] = sa.Data.DatagramVersion
-			fields["AgentAddress"] = sa.Data.AgentAddress
-			fields["SubAgentID"] = sa.Data.SubAgentID
-			fields["SequenceNumber"] = sa.Data.SequenceNumber
-			fields["AgentUptime"] = sa.Data.AgentUptime
-			fields["SampleCount"] = sa.Data.SampleCount
-			fields["EnterpriseID"] = sa.EnterpriseID
-			fields["Format"] = sa.Format
-			fields["SampleLength"] = sa.SampleLength
-			fields["SequenceNumber"] = sa.SequenceNumber
-			fields["SourceIDClass"] = sa.SourceIDClass
-			fields["SourceIDIndex"] = sa.SourceIDIndex
-			fields["SamplingRate"] = sa.SamplingRate
-			fields["SamplePool"] = sa.SamplePool
-			fields["Dropped"] = sa.Dropped
-			fields["InputInterfaceFormat"] = sa.InputInterfaceFormat
-			fields["InputInterface"] = sa.InputInterface
-			fields["OutputInterfaceFormat"] = sa.OutputInterfaceFormat
-			fields["OutputInterface"] = sa.OutputInterface
-			fields["RecordCount"] = sa.RecordCount
+			fields["type"] = counter.Data.Type
+			fields["DatagramVersion"] = counter.Data.DatagramVersion
+			fields["AgentAddress"] = counter.Data.AgentAddress
+			fields["SubAgentID"] = counter.Data.SubAgentID
+			fields["SequenceNumber"] = counter.Data.SequenceNumber
+			fields["AgentUptime"] = counter.Data.AgentUptime
+			fields["SampleCount"] = counter.Data.SampleCount
+			fields["EnterpriseID"] = counter.EnterpriseID
+			fields["Format"] = counter.Format
+			fields["SampleLength"] = counter.SampleLength
+			fields["SequenceNumber"] = counter.SequenceNumber
+			fields["SourceIDClass"] = counter.SourceIDClass
+			fields["SourceIDIndex"] = counter.SourceIDIndex
+			fields["RecordCount"] = counter.RecordCount
 
-			//SFlowRawPacketFlowRecord
-			fields["SFlowRawPacketFlowRecord.SFlowBaseFlowRecord.EnterpriseID"] = sa.SFlowRawPacketFlowRecord.SFlowBaseFlowRecord.EnterpriseID
-			fields["SFlowRawPacketFlowRecord.SFlowBaseFlowRecord.Format"] = sa.SFlowRawPacketFlowRecord.SFlowBaseFlowRecord.Format
-			fields["SFlowRawPacketFlowRecord.SFlowBaseFlowRecord.FlowDataLength"] = sa.SFlowRawPacketFlowRecord.SFlowBaseFlowRecord.FlowDataLength
-			fields["SFlowRawPacketFlowRecord.HeaderProtocol"] = sa.SFlowRawPacketFlowRecord.HeaderProtocol
-			fields["SFlowRawPacketFlowRecord.FrameLength"] = sa.SFlowRawPacketFlowRecord.FrameLength
-			fields["SFlowRawPacketFlowRecord.PayloadRemoved"] = sa.SFlowRawPacketFlowRecord.PayloadRemoved
-			fields["SFlowRawPacketFlowRecord.HeaderLength"] = sa.SFlowRawPacketFlowRecord.HeaderLength
-			fields["SFlowRawPacketFlowRecord.Header.FlowRecords"] = sa.SFlowRawPacketFlowRecord.Header.FlowRecords
-			fields["SFlowRawPacketFlowRecord.Header.Packets"] = sa.SFlowRawPacketFlowRecord.Header.Packets
-			fields["SFlowRawPacketFlowRecord.Header.Bytes"] = sa.SFlowRawPacketFlowRecord.Header.Bytes
-			fields["SFlowRawPacketFlowRecord.Header.RateBytes"] = sa.SFlowRawPacketFlowRecord.Header.RateBytes
-			fields["SFlowRawPacketFlowRecord.Header.SrcMac"] = sa.SFlowRawPacketFlowRecord.Header.SrcMac
-			fields["SFlowRawPacketFlowRecord.Header.DstMac"] = sa.SFlowRawPacketFlowRecord.Header.DstMac
-			fields["SFlowRawPacketFlowRecord.Header.SrcIP"] = sa.SFlowRawPacketFlowRecord.Header.SrcIP
-			fields["SFlowRawPacketFlowRecord.Header.DstIP"] = sa.SFlowRawPacketFlowRecord.Header.DstIP
-			fields["SFlowRawPacketFlowRecord.Header.Ipv4_version"] = sa.SFlowRawPacketFlowRecord.Header.Ipv4_version
-			fields["SFlowRawPacketFlowRecord.Header.Ipv4_ihl"] = sa.SFlowRawPacketFlowRecord.Header.Ipv4_ihl
-			fields["SFlowRawPacketFlowRecord.Header.Ipv4_tos"] = sa.SFlowRawPacketFlowRecord.Header.Ipv4_tos
-			fields["SFlowRawPacketFlowRecord.Header.Ipv4_ttl"] = sa.SFlowRawPacketFlowRecord.Header.Ipv4_ttl
-			fields["SFlowRawPacketFlowRecord.Header.Ipv4_protocol"] = sa.SFlowRawPacketFlowRecord.Header.Ipv4_protocol
-			fields["SFlowRawPacketFlowRecord.Header.SrcPort"] = sa.SFlowRawPacketFlowRecord.Header.SrcPort
-			fields["SFlowRawPacketFlowRecord.Header.DstPort"] = sa.SFlowRawPacketFlowRecord.Header.DstPort
+			//SFlowGenericInterfaceCounters
+			fields["SFlowGenericInterfaceCounters.SFlowBaseCounterRecord.EnterpriseID"] = counter.SFlowGenericInterfaceCounters.SFlowBaseCounterRecord.EnterpriseID
+			fields["SFlowGenericInterfaceCounters.SFlowBaseCounterRecord.Format"] = counter.SFlowGenericInterfaceCounters.SFlowBaseCounterRecord.Format
+			fields["SFlowGenericInterfaceCounters.SFlowBaseCounterRecord.FlowDataLength"] = counter.SFlowGenericInterfaceCounters.SFlowBaseCounterRecord.FlowDataLength
+			fields["SFlowGenericInterfaceCounters.IfIndex"] = counter.SFlowGenericInterfaceCounters.IfIndex
+			fields["SFlowGenericInterfaceCounters.IfType"] = counter.SFlowGenericInterfaceCounters.IfType
+			fields["SFlowGenericInterfaceCounters.IfSpeed"] = counter.SFlowGenericInterfaceCounters.IfSpeed
+			fields["SFlowGenericInterfaceCounters.IfDirection"] = counter.SFlowGenericInterfaceCounters.IfDirection
+			fields["SFlowGenericInterfaceCounters.IfStatus"] = counter.SFlowGenericInterfaceCounters.IfStatus
+			fields["SFlowGenericInterfaceCounters.IfInOctets"] = counter.SFlowGenericInterfaceCounters.IfInOctets
+			fields["SFlowGenericInterfaceCounters.IfInUcastPkts"] = counter.SFlowGenericInterfaceCounters.IfInUcastPkts
+			fields["SFlowGenericInterfaceCounters.IfInMulticastPkts"] = counter.SFlowGenericInterfaceCounters.IfInMulticastPkts
+			fields["SFlowGenericInterfaceCounters.IfInBroadcastPkts"] = counter.SFlowGenericInterfaceCounters.IfInBroadcastPkts
+			fields["SFlowGenericInterfaceCounters.IfInDiscards"] = counter.SFlowGenericInterfaceCounters.IfInDiscards
+			fields["SFlowGenericInterfaceCounters.IfInErrors"] = counter.SFlowGenericInterfaceCounters.IfInErrors
+			fields["SFlowGenericInterfaceCounters.IfInUnknownProtos"] = counter.SFlowGenericInterfaceCounters.IfInUnknownProtos
+			fields["SFlowGenericInterfaceCounters.IfOutOctets"] = counter.SFlowGenericInterfaceCounters.IfOutOctets
+			fields["SFlowGenericInterfaceCounters.IfOutUcastPkts"] = counter.SFlowGenericInterfaceCounters.IfOutUcastPkts
+			fields["SFlowGenericInterfaceCounters.IfOutMulticastPkts"] = counter.SFlowGenericInterfaceCounters.IfOutMulticastPkts
+			fields["SFlowGenericInterfaceCounters.IfOutBroadcastPkts"] = counter.SFlowGenericInterfaceCounters.IfOutBroadcastPkts
+			fields["SFlowGenericInterfaceCounters.IfOutDiscards"] = counter.SFlowGenericInterfaceCounters.IfOutDiscards
+			fields["SFlowGenericInterfaceCounters.IfOutErrors"] = counter.SFlowGenericInterfaceCounters.IfOutErrors
+			fields["SFlowGenericInterfaceCounters.IfPromiscuousMode"] = counter.SFlowGenericInterfaceCounters.IfPromiscuousMode
 
-			//SFlowExtendedSwitchFlowRecord
-			fields["SFlowExtendedSwitchFlowRecord.SFlowBaseFlowRecord.EnterpriseID"] = sa.SFlowExtendedSwitchFlowRecord.SFlowBaseFlowRecord.EnterpriseID
-			fields["SFlowExtendedSwitchFlowRecord.SFlowBaseFlowRecord.Format"] = sa.SFlowExtendedSwitchFlowRecord.SFlowBaseFlowRecord.Format
-			fields["SFlowExtendedSwitchFlowRecord.SFlowBaseFlowRecord.FlowDataLength"] = sa.SFlowExtendedSwitchFlowRecord.SFlowBaseFlowRecord.FlowDataLength
-			fields["SFlowExtendedSwitchFlowRecord.IncomingVLAN"] = sa.SFlowExtendedSwitchFlowRecord.IncomingVLAN
-			fields["SFlowExtendedSwitchFlowRecord.IncomingVLANPriority"] = sa.SFlowExtendedSwitchFlowRecord.IncomingVLANPriority
-			fields["SFlowExtendedSwitchFlowRecord.OutgoingVLAN"] = sa.SFlowExtendedSwitchFlowRecord.OutgoingVLAN
-			fields["SFlowExtendedSwitchFlowRecord.OutgoingVLANPriority"] = sa.SFlowExtendedSwitchFlowRecord.OutgoingVLANPriority
+			//SFlowEthernetCounters
+			fields["SFlowEthernetCounters.SFlowBaseCounterRecord.EnterpriseID"] = counter.SFlowEthernetCounters.SFlowBaseCounterRecord.EnterpriseID
+			fields["SFlowEthernetCounters.SFlowBaseCounterRecord.Format"] = counter.SFlowEthernetCounters.SFlowBaseCounterRecord.Format
+			fields["SFlowEthernetCounters.SFlowBaseCounterRecord.FlowDataLength"] = counter.SFlowEthernetCounters.SFlowBaseCounterRecord.FlowDataLength
+			fields["SFlowEthernetCounters.AlignmentErrors"] = counter.SFlowEthernetCounters.AlignmentErrors
+			fields["SFlowEthernetCounters.FCSErrors"] = counter.SFlowEthernetCounters.FCSErrors
+			fields["SFlowEthernetCounters.SingleCollisionFrames"] = counter.SFlowEthernetCounters.SingleCollisionFrames
+			fields["SFlowEthernetCounters.MultipleCollisionFrames"] = counter.SFlowEthernetCounters.MultipleCollisionFrames
+			fields["SFlowEthernetCounters.SQETestErrors"] = counter.SFlowEthernetCounters.SQETestErrors
+			fields["SFlowEthernetCounters.DeferredTransmissions"] = counter.SFlowEthernetCounters.DeferredTransmissions
+			fields["SFlowEthernetCounters.LateCollisions"] = counter.SFlowEthernetCounters.LateCollisions
+			fields["SFlowEthernetCounters.ExcessiveCollisions"] = counter.SFlowEthernetCounters.ExcessiveCollisions
+			fields["SFlowEthernetCounters.InternalMacTransmitErrors"] = counter.SFlowEthernetCounters.InternalMacTransmitErrors
+			fields["SFlowEthernetCounters.CarrierSenseErrors"] = counter.SFlowEthernetCounters.CarrierSenseErrors
+			fields["SFlowEthernetCounters.FrameTooLongs"] = counter.SFlowEthernetCounters.FrameTooLongs
+			fields["SFlowEthernetCounters.InternalMacReceiveErrors"] = counter.SFlowEthernetCounters.InternalMacReceiveErrors
+			fields["SFlowEthernetCounters.SymbolErrors"] = counter.SFlowEthernetCounters.SymbolErrors
 
-			//SFlowExtendedRouterFlowRecord
-			fields["SFlowExtendedRouterFlowRecord.SFlowBaseFlowRecord.EnterpriseID"] = sa.SFlowExtendedRouterFlowRecord.SFlowBaseFlowRecord.EnterpriseID
-			fields["SFlowExtendedRouterFlowRecord.SFlowBaseFlowRecord.Format"] = sa.SFlowExtendedRouterFlowRecord.SFlowBaseFlowRecord.Format
-			fields["SFlowExtendedRouterFlowRecord.SFlowBaseFlowRecord.FlowDataLength"] = sa.SFlowExtendedRouterFlowRecord.SFlowBaseFlowRecord.FlowDataLength
-			fields["SFlowExtendedRouterFlowRecord.NextHop"] = sa.SFlowExtendedRouterFlowRecord.NextHop
-			fields["SFlowExtendedRouterFlowRecord.NextHopSourceMask"] = sa.SFlowExtendedRouterFlowRecord.NextHopSourceMask
-			fields["SFlowExtendedRouterFlowRecord.NextHopDestinationMask"] = sa.SFlowExtendedRouterFlowRecord.NextHopDestinationMask
-
-			//SFlowExtendedGatewayFlowRecord
-			fields["SFlowExtendedGatewayFlowRecord.SFlowBaseFlowRecord.EnterpriseID"] = sa.SFlowExtendedGatewayFlowRecord.SFlowBaseFlowRecord.EnterpriseID
-			fields["SFlowExtendedGatewayFlowRecord.SFlowBaseFlowRecord.Format"] = sa.SFlowExtendedGatewayFlowRecord.SFlowBaseFlowRecord.Format
-			fields["SFlowExtendedGatewayFlowRecord.SFlowBaseFlowRecord.FlowDataLength"] = sa.SFlowExtendedGatewayFlowRecord.SFlowBaseFlowRecord.FlowDataLength
-			fields["SFlowExtendedGatewayFlowRecord.NextHop"] = sa.SFlowExtendedGatewayFlowRecord.NextHop
-			fields["SFlowExtendedGatewayFlowRecord.AS"] = sa.SFlowExtendedGatewayFlowRecord.AS
-			fields["SFlowExtendedGatewayFlowRecord.SourceAS"] = sa.SFlowExtendedGatewayFlowRecord.SourceAS
-			fields["SFlowExtendedGatewayFlowRecord.PeerAS"] = sa.SFlowExtendedGatewayFlowRecord.PeerAS
-			fields["SFlowExtendedGatewayFlowRecord.ASPathCount"] = sa.SFlowExtendedGatewayFlowRecord.ASPathCount
-			fields["SFlowExtendedGatewayFlowRecord.ASPath"] = sa.SFlowExtendedGatewayFlowRecord.ASPath
-			fields["SFlowExtendedGatewayFlowRecord.Communities"] = sa.SFlowExtendedGatewayFlowRecord.Communities
-			fields["SFlowExtendedGatewayFlowRecord.LocalPref"] = sa.SFlowExtendedGatewayFlowRecord.LocalPref
-
-			//SFlowExtendedUserFlow
-			fields["SFlowExtendedUserFlow.SFlowBaseFlowRecord.EnterpriseID"] = sa.SFlowExtendedUserFlow.SFlowBaseFlowRecord.EnterpriseID
-			fields["SFlowExtendedUserFlow.SFlowBaseFlowRecord.Format"] = sa.SFlowExtendedUserFlow.SFlowBaseFlowRecord.Format
-			fields["SFlowExtendedUserFlow.SFlowBaseFlowRecord.FlowDataLength"] = sa.SFlowExtendedUserFlow.SFlowBaseFlowRecord.FlowDataLength
-			fields["SFlowExtendedUserFlow.SourceCharSet"] = sa.SFlowExtendedUserFlow.SourceCharSet
-			fields["SFlowExtendedUserFlow.SourceUserID"] = sa.SFlowExtendedUserFlow.SourceUserID
-			fields["SFlowExtendedUserFlow.DestinationCharSet"] = sa.SFlowExtendedUserFlow.DestinationCharSet
-			fields["SFlowExtendedUserFlow.DestinationUserID"] = sa.SFlowExtendedUserFlow.DestinationUserID
+			//SFlowProcessorCounters
+			fields["SFlowProcessorCounters.SFlowBaseCounterRecord.EnterpriseID"] = counter.SFlowProcessorCounters.SFlowBaseCounterRecord.EnterpriseID
+			fields["SFlowProcessorCounters.SFlowBaseCounterRecord.Format"] = counter.SFlowProcessorCounters.SFlowBaseCounterRecord.Format
+			fields["SFlowProcessorCounters.SFlowBaseCounterRecord.FlowDataLength"] = counter.SFlowProcessorCounters.SFlowBaseCounterRecord.FlowDataLength
+			fields["SFlowProcessorCounters.FiveSecCpu"] = counter.SFlowProcessorCounters.FiveSecCpu
+			fields["SFlowProcessorCounters.OneMinCpu"] = counter.SFlowProcessorCounters.OneMinCpu
+			fields["SFlowProcessorCounters.FiveMinCpu"] = counter.SFlowProcessorCounters.FiveMinCpu
+			fields["SFlowProcessorCounters.TotalMemory"] = counter.SFlowProcessorCounters.TotalMemory
+			fields["SFlowProcessorCounters.FreeMemory"] = counter.SFlowProcessorCounters.FreeMemory
 			dns.results.PublishTransaction(fields)
 		}
 	}

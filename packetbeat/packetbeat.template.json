@@ -871,6 +871,9 @@
                  },
                  "RecordCount": {
                    "type": "long"
+                 },
+                 "SampleLength": {
+                   "type": "long"
                  }
               }
             },
@@ -1100,6 +1103,171 @@
                 "DestinationUserID": {
                   "ignore_above": 1024,
                   "type": "keyword"
+                }
+              }
+            },
+            "SFlowGenericInterfaceCounters": {
+              "properties": {
+                "SFlowBaseFlowRecord": {
+                  "properties": {
+                    "EnterpriseID": {
+                      "ignore_above": 1024,
+                      "type": "keyword"
+                    },
+                    "Format": {
+                      "ignore_above": 1024,
+                      "type": "keyword"
+                    },
+                    "FlowDataLength": {
+                      "type": "long"
+                    }
+                  }
+                },
+                "IfIndex": {
+                  "type": "long"
+                },
+                "IfType": {
+                  "type": "long"
+                },
+                "IfSpeed": {
+                  "type": "long"
+                },
+                "IfDirection": {
+                  "type": "long"
+                },
+                "IfStatus": {
+                  "type": "long"
+                },
+                "IfInOctets": {
+                  "type": "long"
+                },
+                "IfInUcastPkts": {
+                  "type": "long"
+                },
+                "IfInMulticastPkts": {
+                  "type": "long"
+                },
+                "IfInBroadcastPkts": {
+                  "type": "long"
+                },
+                "IfInDiscards": {
+                  "type": "long"
+                },
+                "IfInErrors": {
+                  "type": "long"
+                },
+                "IfInUnknownProtos": {
+                  "type": "long"
+                },
+                "IfOutOctets": {
+                  "type": "long"
+                },
+                "IfOutUcastPkts": {
+                  "type": "long"
+                },
+                "IfOutMulticastPkts": {
+                  "type": "long"
+                },
+                "IfOutDiscards": {
+                  "type": "long"
+                },
+                "IfOutErrors": {
+                  "type": "long"
+                },
+                "IfPromiscuousMode": {
+                  "type": "long"
+                }
+              }
+            },
+            "SFlowEthernetCounters": {
+              "properties": {
+                "SFlowBaseFlowRecord": {
+                  "properties": {
+                    "EnterpriseID": {
+                      "ignore_above": 1024,
+                      "type": "keyword"
+                    },
+                    "Format": {
+                      "ignore_above": 1024,
+                      "type": "keyword"
+                    },
+                    "FlowDataLength": {
+                      "type": "long"
+                    }
+                  }
+                },
+                "AlignmentErrors": {
+                  "type": "long"
+                },
+                "FCSErrors": {
+                  "type": "long"
+                },
+                "SingleCollisionFrames": {
+                  "type": "long"
+                },
+                "MultipleCollisionFrames": {
+                  "type": "long"
+                },
+                "SQETestErrors": {
+                  "type": "long"
+                },
+                "DeferredTransmissions": {
+                  "type": "long"
+                },
+                "LateCollisions": {
+                  "type": "long"
+                },
+                "ExcessiveCollisions": {
+                  "type": "long"
+                },
+                "InternalMacTransmitErrors": {
+                  "type": "long"
+                },
+                "CarrierSenseErrors": {
+                  "type": "long"
+                },
+                "FrameTooLongs": {
+                  "type": "long"
+                },
+                "InternalMacReceiveErrors": {
+                  "type": "long"
+                },
+                "SymbolErrors": {
+                  "type": "long"
+                }
+              }
+            },
+            "SFlowProcessorCounters": {
+              "properties": {
+                "SFlowBaseFlowRecord": {
+                  "properties": {
+                    "EnterpriseID": {
+                      "ignore_above": 1024,
+                      "type": "keyword"
+                    },
+                    "Format": {
+                      "ignore_above": 1024,
+                      "type": "keyword"
+                    },
+                    "FlowDataLength": {
+                      "type": "long"
+                    }
+                  }
+                },
+                "FiveSecCpu": {
+                  "type": "long"
+                },
+                "OneMinCpu": {
+                  "type": "long"
+                },
+                "FiveMinCpu": {
+                  "type": "long"
+                },
+                "TotalMemory": {
+                  "type": "long"
+                },
+                "FreeMemory": {
+                  "type": "long"
                 }
               }
             }

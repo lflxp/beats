@@ -28,7 +28,7 @@ func (dns *dnsPlugin) ParseUDP(pkt *protos.Packet) {
 	tuple.SrcPort = pkt.Tuple.SrcPort
 	tuple.DstPort = pkt.Tuple.DstPort
 
-	samples, err := lxp.DecodeSample(&tuple, pkt.Payload)
+	sample,counter, err := lxp.DecodeSflow(&tuple, pkt.Payload)
 	if err != nil {
 		debugf(err.Error())
 	}
@@ -45,7 +45,8 @@ func (dns *dnsPlugin) ParseUDP(pkt *protos.Packet) {
 		ts:           pkt.Ts,
 		tuple:        pkt.Tuple,
 		cmdlineTuple: procs.ProcWatcher.FindProcessesTuple(&pkt.Tuple),
-		data:         samples[0],
+		samples:      sample,
+		counters:     counter,
 		length:       packetSize,
 	}
 
