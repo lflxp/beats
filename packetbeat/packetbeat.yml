@@ -11,7 +11,7 @@
 
 # Select the network interface to sniff the data. On Linux, you can use the
 # "any" keyword to sniff on all connected interfaces.
-packetbeat.interfaces.device: any
+packetbeat.interfaces.device: en0 
 
 #================================== Flows =====================================
 
@@ -115,7 +115,7 @@ packetbeat.protocols.nfs:
 #-------------------------- Elasticsearch output ------------------------------
 output.elasticsearch:
   # Array of hosts to connect to.
-  hosts: ["localhost:9200"]
+  hosts: ["10.6.200.8:9200"]
 
   # Optional protocol and basic auth credentials.
   #protocol: "https"
