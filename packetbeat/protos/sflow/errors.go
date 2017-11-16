@@ -4,42 +4,32 @@ import (
 	"fmt"
 )
 
-// All dns protocol errors are defined here.
+// All sflow protocol errors are defined here.
 
-type dnsError struct {
+type sflowError struct {
 	message string
 }
 
-func (e *dnsError) Error() string {
+func (e *sflowError) Error() string {
 	if e == nil {
 		return "<nil>"
 	}
 	return e.message
 }
 
-func (e *dnsError) responseError() string {
+func (e *sflowError) responseError() string {
 	return "Response: " + e.Error()
 }
 
 // Common
 var (
-	nonDNSMsg         = &dnsError{message: "Message's data could not be decoded as DNS"}
-	duplicateQueryMsg = &dnsError{message: "Another query with the same DNS ID from this client " +
+	duplicateQueryMsg = &sflowError{message: "Another query with the same SFLOW ID from this client " +
 		"was received so this query was closed without receiving a response"}
-	noResponse       = &dnsError{message: "No response to this query was received"}
-	orphanedResponse = &dnsError{message: "Response: received without an associated Query"}
+	noResponse       = &sflowError{message: "No response to this query was received"}
+	orphanedResponse = &sflowError{message: "Response: received without an associated Query"}
 )
 
-// EDNS
+// SFLOW
 var (
-	udpPacketTooLarge  = &dnsError{message: fmt.Sprintf("Non-EDNS packet has size greater than %d", maxDNSPacketSize)}
-	respEdnsNoSupport  = &dnsError{message: "Responder does not support EDNS"}
-	respEdnsUnexpected = &dnsError{message: "Unexpected EDNS answer"}
-)
-
-// TCP
-var (
-	zeroLengthMsg       = &dnsError{message: "Message's length was set to zero"}
-	unexpectedLengthMsg = &dnsError{message: "Unexpected message data length"}
-	incompleteMsg       = &dnsError{message: "Message's data is incomplete"}
+	udpPacketTooLarge  = &sflowError{message: fmt.Sprintf("Non-SFLOW packet has size greater than %d", maxSFLOWPacketSize)}
 )

@@ -7,6 +7,8 @@ import (
 
 type sflowConfig struct {
 	config.ProtocolCommon `config:",inline"`
+	IncludeAuthorities    bool `config:"include_authorities"`
+	IncludeAdditionals    bool `config:"include_additionals"`
 }
 
 var (
