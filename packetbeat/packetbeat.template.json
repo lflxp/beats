@@ -786,97 +786,94 @@
             }
           }
         },
-        "sss": {
+        "sflow": {
           "properties": {
-            "Data": {
-              "properties": {
-                "Datagram": {
-                   "properties": {
-                     "IPLength": {
-                       "ignore_above": 1024,
-                       "type": "keyword"
-                     },
-                     "SrcIP": {
-                       "ignore_above": 1024,
-                       "type": "keyword"
-                     },
-                     "DstIP": {
-                       "ignore_above": 1024,
-                       "type": "keyword"
-                     },
-                     "SrcPort": {
-                       "type": "long"
-                     },
-                     "DstPort": {
-                       "type": "long"
-                     }
-                   }
-                },
-                "DatagramVersion": {
-                   "ignore_above": 1024,
-                   "type": "keyword"
-                 },
-                 "AgentAddress": {
-                   "ignore_above": 1024,
-                   "type": "keyword"
-                 },
-                 "SubAgentID": {
-                   "ignore_above": 1024,
-                   "type": "keyword"
-                 },
-                 "SequenceNumber": {
-                   "type": "long"
-                 },
-                 "AgentUptime": {
-                   "type": "long"
-                 },
-                 "SampleCount": {
-                   "type": "long"
-                 },
-                 "EnterpriseID": {
-                   "type": "long"
-                 },
-                 "Format": {
-                   "ignore_above": 1024,
-                   "type": "keyword"
-                 },
-                 "SourceIDClass": {
-                   "type": "long"
-                 },
-                 "SourceIDIndex": {
-                   "type": "long"
-                 },
-                 "SamplingRate": {
-                   "type": "long"
-                 },
-                 "SamplePool": {
-                   "type": "long"
-                 },
-                 "Dropped": {
-                   "type": "long"
-                 },
-                 "InputInterfaceFormat": {
-                   "ignore_above": 1024,
-                   "type": "keyword"
-                 },
-                 "InputInterface": {
-                   "type": "long"
-                 },
-                 "OutputInterfaceFormat": {
-                   "ignore_above": 1024,
-                   "type": "keyword"
-                 },
-                 "OutputInterface": {
-                   "type": "long"
-                 },
-                 "RecordCount": {
-                   "type": "long"
-                 },
-                 "SampleLength": {
-                   "type": "long"
-                 }
-              }
+            "Datagram": {
+                "properties": {
+                    "IPLength": {
+                        "ignore_above": 1024,
+                        "type": "keyword"
+                    },
+                    "SrcIP": {
+                        "ignore_above": 1024,
+                        "type": "keyword"
+                    },
+                    "DstIP": {
+                        "ignore_above": 1024,
+                        "type": "keyword"
+                    },
+                    "SrcPort": {
+                        "type": "long"
+                    },
+                    "DstPort": {
+                        "type": "long"
+                    }
+                }
             },
+            "DatagramVersion": {
+               "ignore_above": 1024,
+               "type": "keyword"
+             },
+            "AgentAddress": {
+               "ignore_above": 1024,
+               "type": "keyword"
+             },
+            "SubAgentID": {
+               "ignore_above": 1024,
+               "type": "keyword"
+             },
+            "SequenceNumber": {
+               "type": "long"
+             },
+            "AgentUptime": {
+               "type": "long"
+             },
+            "SampleCount": {
+               "type": "long"
+             },
+            "EnterpriseID": {
+               "type": "long"
+             },
+            "Format": {
+               "ignore_above": 1024,
+               "type": "keyword"
+             },
+            "SourceIDClass": {
+               "type": "long"
+             },
+            "SourceIDIndex": {
+               "type": "long"
+             },
+            "SamplingRate": {
+               "type": "long"
+             },
+            "SamplePool": {
+               "type": "long"
+             },
+            "Dropped": {
+               "type": "long"
+             },
+            "InputInterfaceFormat": {
+               "ignore_above": 1024,
+               "type": "keyword"
+             },
+            "InputInterface": {
+               "type": "long"
+             },
+            "OutputInterfaceFormat": {
+               "ignore_above": 1024,
+               "type": "keyword"
+             },
+            "OutputInterface": {
+               "type": "long"
+             },
+            "RecordCount": {
+               "type": "long"
+             },
+            "SampleLength": {
+               "type": "long"
+             },
+
             "SFlowRawPacketFlowRecord": {
               "properties": {
                 "SFlowBaseFlowRecord": {

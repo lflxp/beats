@@ -565,7 +565,6 @@ func (sflow *sflowPlugin) ParseUDP(pkt *protos.Packet) {
 			counters:     counter,
 			length:       packetSize,
 		}
-
 		sflow.receivedSFLOWRequest(&sflowTuple, sflowMsg)
 	}
 }

@@ -26,7 +26,6 @@ var (
 	duplicateQueryMsg = &sflowError{message: "Another query with the same SFLOW ID from this client " +
 		"was received so this query was closed without receiving a response"}
 	noResponse       = &sflowError{message: "No response to this query was received"}
-	orphanedResponse = &sflowError{message: "Response: received without an associated Query"}
 )
 
 // SFLOW

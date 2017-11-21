@@ -22,5 +22,5 @@ import (
 	_ "github.com/elastic/beats/packetbeat/protos/tcp"
 	_ "github.com/elastic/beats/packetbeat/protos/thrift"
 	_ "github.com/elastic/beats/packetbeat/protos/udp"
-	_ "github.com/elastic/beats/packetbeat/protos/sss"
+	_ "github.com/elastic/beats/packetbeat/protos/sflow"
 )
