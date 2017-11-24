@@ -19,7 +19,8 @@ import (
 	"github.com/elastic/beats/packetbeat/procs"
 	"github.com/elastic/beats/packetbeat/protos"
 
-	lxp "github.com/lflxp/sflow"
+	// lxp "github.com/lflxp/sflow"
+	lxp "gitlab.qiyi.domain/lixueping/sflowtool"
 )
 
 type sflowPlugin struct {
@@ -321,13 +322,16 @@ func (sflow *sflowPlugin) publishTransaction(t *sflowTransaction) {
 			fields["SequenceNumber"] = sa.SequenceNumber
 			fields["SourceIDClass"] = sa.SourceIDClass
 			fields["SourceIDIndex"] = sa.SourceIDIndex
+			fields["SourceIDIndexName"] = sa.SourceIDIndexName
 			fields["SamplingRate"] = sa.SamplingRate
 			fields["SamplePool"] = sa.SamplePool
 			fields["Dropped"] = sa.Dropped
 			fields["InputInterfaceFormat"] = sa.InputInterfaceFormat
 			fields["InputInterface"] = sa.InputInterface
+			fields["InputInterfaceName"] = sa.InputInterfaceName
 			fields["OutputInterfaceFormat"] = sa.OutputInterfaceFormat
 			fields["OutputInterface"] = sa.OutputInterface
+			fields["OutputInterfaceName"] = sa.OutputInterfaceName
 			fields["RecordCount"] = sa.RecordCount
 
 			//SFlowRawPacketFlowRecord
@@ -460,6 +464,7 @@ func (sflow *sflowPlugin) publishTransaction(t *sflowTransaction) {
 			fields["SequenceNumber"] = counter.SequenceNumber
 			fields["SourceIDClass"] = counter.SourceIDClass
 			fields["SourceIDIndex"] = counter.SourceIDIndex
+			fields["SourceIDIndexName"] = counter.SourceIDIndexName
 			fields["RecordCount"] = counter.RecordCount
 
 			//SFlowGenericInterfaceCounters
