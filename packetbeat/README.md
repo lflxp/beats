@@ -43,3 +43,17 @@ We love contributions from our community! Please read the
 ## Snapshots
 
 For testing purposes, we generate snapshot builds that you can find [here](https://beats-nightlies.s3.amazonaws.com/index.html?prefix=packetbeat). Please be aware that these are built on top of master and are not meant for production.
+
+## Add Switch Port Check
+
+FileName: community.ini
+Config:
+
+> [host][:][community],[host][:][community]...
+
+Example:
+
+```
+[host]
+hosts = "host1:pwd1,host2:pwd2,host3:pwd3....."
+```
